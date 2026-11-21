@@ -1,0 +1,9 @@
+# Builds one firmware file per half, plus settings_reset (clears Bluetooth bonds).
+# Board: nice_nano_v2 also works for the Pro Micro nRF52840 / SuperMini clones.
+include:
+  - board: nice_nano_v2
+    shield: corne_num_left
+  - board: nice_nano_v2
+    shield: corne_num_right
+  - board: nice_nano_v2
+    shield: settings_reset

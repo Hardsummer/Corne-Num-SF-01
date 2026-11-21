@@ -1,0 +1,12 @@
+file_format: "1"
+id: corne_num
+name: Corne Num
+type: shield
+url: https://github.com/foostan/crkbd
+requires: [pro_micro]
+features:
+  - keys
+  - studio
+siblings:
+  - corne_num_left
+  - corne_num_right

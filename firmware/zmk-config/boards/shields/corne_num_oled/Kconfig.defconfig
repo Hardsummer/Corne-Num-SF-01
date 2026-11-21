@@ -1,0 +1,48 @@
+if SHIELD_CORNE_NUM_OLED
+
+config ZMK_DISPLAY
+    default y
+
+config I2C
+    default y
+
+config SSD1306
+    default y
+
+config LV_Z_VDB_SIZE
+    default 100
+
+config LV_DPI_DEF
+    default 148
+
+config LV_Z_BITS_PER_PIXEL
+    default 1
+
+choice LV_COLOR_DEPTH
+    default LV_COLOR_DEPTH_1
+endchoice
+
+choice ZMK_DISPLAY_WORK_QUEUE
+    default ZMK_DISPLAY_WORK_QUEUE_DEDICATED
+endchoice
+
+choice ZMK_DISPLAY_STATUS_SCREEN
+    default ZMK_DISPLAY_STATUS_SCREEN_CUSTOM
+endchoice
+
+config LV_Z_MEM_POOL_SIZE
+    default 6144
+
+config CORNE_NUM_OLED_VERTICAL
+    bool "Upright status screen for a 128x32 OLED mounted vertically"
+    default y if ZMK_DISPLAY_STATUS_SCREEN_CUSTOM
+    select LV_USE_CANVAS
+    select LV_USE_IMG
+    select LV_FONT_MONTSERRAT_10
+    select LV_FONT_MONTSERRAT_12
+    select LV_FONT_MONTSERRAT_16
+
+config CORNE_NUM_OLED_FLIP
+    bool "Turn the upright screen 180 degrees (use if it reads upside down)"
+
+endif
